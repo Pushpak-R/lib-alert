@@ -2,7 +2,7 @@
 Alert library for custom alerts, confirm and notifications
 
 # Including library
-To use this library include the customAlert.css and customAlert.js befor the end of the body tag.
+To use this library include the customAlert.css and customAlert.js before the end of the body tag.
 
 # Using CustomAlert constructor to create alerts, confirmations and notifications
 
