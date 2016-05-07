@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Alert Library</title>
+  <link rel="stylesheet" href="customAlert.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+  <!-- Html to see the custom alert in action -->
+  <div>
+    <label>Click these button to see the library in action.</label>
+    <div class="">
+      <button type="button" name="button" class="btn" id="alert">Alert</button>
+      <button type="button" name="button" class="btn" id="confirm">Comfirm</button>
+      <button type="button" name="button" class="btn" id="notification">Notification</button>
+    </div>
+  </div>
+
+
+  <script src="customalert.js"></script>
+  <!-- Code to see the use of custom alert library -->
+  <script type="text/javascript">
+  (function(){
+    var myAlert, myConfirm, myNotify;
+    myAlert = new CustomAlert({
+      heading : "Alert",
+      type : "alert",
+      message : "Hello, alert... (press ok, no other options) Ok?",
+      ok_text : "Ok"
+    });
+    myConfirm = new CustomAlert({
+      heading : "Confirm",
+      type : "confirm",
+      message : "Hello, Confirm... Yes || NO?",
+      ok_text : "Yes",
+      cancel_text : "No"
+    });
+    myNotify = new CustomAlert({
+      heading : "Notification",
+      type : "notify",
+      message : "Hello, Notification... (Just to notify you, no need to do anything)"
+    });
+    document.getElementById('alert').onclick = function(){
+      myAlert.show();
+      myAlert.confirm = function(){
+        alert("Thanks for pressing Ok");
+      }
+    };
+    document.getElementById('confirm').onclick = function(){
+      myConfirm.show();
+      myConfirm.confirm = function(){
+        alert("Thanks for pressing confirming by pressing 'Yes'");
+      }
+      myConfirm.dismiss = function(){
+        alert("Thanks for pressing confirming by pressing 'No'");
+      }
+    };
+    document.getElementById('notification').onclick = function(){
+      myNotify.show();
+    };
+  })();
+  </script>
+</body>
+</html>
